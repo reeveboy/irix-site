@@ -1,7 +1,7 @@
 :root {
   --dark: #120d28;
   --light: #e9e6f7;
-  --primary: #ffffff;
+  --primary: #3e7ee9;
   --accent: #ff6524;
 }
 
@@ -17,24 +17,97 @@ body {
   cursor: crosshair;
   font-family: "Rubik", sans-serif;
 }
-#logo {
-  fill: var(--light);
-  aspect-ratio: 3, 1;
-  width: 30%;
-  height: 10%;
-  text-shadow: 0 0px 15px rgba(255, 255, 255, 0.25),
-    0 0px 32px rgba(255, 255, 255, 0.1);
-}
+
 canvas {
   display: block;
   width: 100%;
   height: 100%;
 }
-.header {
+
+.main {
   position: absolute;
-  top: 45%;
+  top: 35%;
   z-index: 1030;
   color: #dddddd;
+}
+
+#logo {
+  fill: var(--light);
+  aspect-ratio: 3, 1;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0px 15px rgba(255, 255, 255, 0.25),
+    0 0px 32px rgba(255, 255, 255, 0.1);
+}
+
+.float {
+  animation: floating 3s ease-in-out infinite alternate;
+}
+
+.flicker {
+  animation: flickerAnimation 2s ease-in-out infinite;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  color: #3e7ee9;
+  font-family: "Rubik", sans-serif;
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  letter-spacing: 0.15em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-shadow: 0 0px 15px rgba(255, 255, 255, 0.25),
+    0 0px 32px rgba(255, 255, 255, 0.1);
+
+  --bg-size: 400%;
+  --color-one: hsl(15 90% 55%);
+  --color-two: hsl(40 95% 55%);
+  background: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 8s infinite linear;
+}
+
+.arrows {
+  width: 60px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 20px;
+}
+
+.arrows path {
+  stroke: #2994d1;
+  fill: transparent;
+  stroke-width: 1px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s; /* Safari 和 Chrome */
 }
 
 .disable-selection {
@@ -45,50 +118,79 @@ canvas {
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
 
-.cms {
-  font-size: 42px;
-  font-weight: 500;
-  font-family: "Anton", sans-serif;
-}
-h2 {
-  font-size: 3em;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  letter-spacing: 0.15em;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  text-shadow: 0 0px 15px rgba(255, 255, 255, 0.25),
-    0 0px 32px rgba(255, 255, 255, 0.1);
-}
-
 .next {
   width: 100%;
   /* height: 100vh; */
 }
 
-.floater {
-  animation-name: floating;
-  animation-duration: 3s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-
-  @keyframes floating {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(0, 15px);
-    }
-  }
-}
-
 @media screen and (max-width: 768px) {
-  .cms {
+  .subtitle {
     font-size: 32px;
   }
   h2 {
     font-size: 2em;
+  }
+  #logo {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+/* Keyframes */
+
+@keyframes floating {
+  0% {
+    transform: translateY(16px);
+  }
+  100% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/ {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
   }
 }
