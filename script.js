@@ -132,7 +132,7 @@ scene.add(sceneGruop);
 scene.add(light);
 scene.add(lightBack);
 
-var rectSize = 2;
+var rectSize = 3;
 var intensity = 100;
 var rectLight = new THREE.RectAreaLight(
   0x0fffff,
@@ -145,7 +145,7 @@ rectLight.lookAt(0, 0, 0);
 scene.add(rectLight);
 
 rectLightHelper = new THREE.RectAreaLightHelper(rectLight);
-//scene.add( rectLightHelper );
+// scene.add(rectLightHelper);
 
 //------------------------------------------------------------- RAYCASTER
 var raycaster = new THREE.Raycaster();
@@ -187,7 +187,6 @@ function onMouseDown(event) {
       INTERSECTED = null;
     }
   }
-  console.log(intersected.length);
 }
 function onMouseUp(event) {}
 
@@ -207,7 +206,7 @@ function animate() {
     newObject.rotation.y += newObject.speedValue / 10;
     newObject.rotation.z += newObject.speedValue / 10;
     //---
-    //newObject.position.y = Math.sin(time) * 3;
+    // newObject.position.y = Math.sin(time) * 3;
   }
 
   for (var i = 0, l = modularGruop.children.length; i < l; i++) {
