@@ -1,0 +1,47 @@
+:root {
+  --dark: #120d28;
+  --light: #e9e6f7;
+  --primary: #3e7ee9;
+  --accent: #ff6524;
+}
+
+canvas {
+  display: block;
+  cursor: crosshair;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  position: absolute;
+  top: 35%;
+  z-index: 1030;
+  pointer-events: none;
+}
+
+#logo {
+  fill: var(--light);
+  aspect-ratio: 3, 1;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0px 15px rgba(255, 255, 255, 0.25),
+    0 0px 32px rgba(255, 255, 255, 0.1);
+}
+
+.disable-selection {
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+@media screen and (max-width: 768px) {
+  .subtitle {
+    font-size: 32px;
+  }
+  #logo {
+    width: 80%;
+    height: 80%;
+  }
+}
