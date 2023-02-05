@@ -1,3 +1,11 @@
+:root {
+  --dark: #120d28;
+  --light: #fffdfa;
+  --primary: #113485;
+  --primary-hover: #0f2a6b;
+  --accent: #ff6524;
+}
+
 * {
   margin: 0;
   padding: 0;
