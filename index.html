@@ -40,6 +40,89 @@
     </script>
   </head>
   <body>
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="transition-all duration-300 z-20 px-2 bg-dark sm:px-4 py-2.5 fixed w-full -top-20 left-0 border-b border-gray-700"
+    >
+      <div
+        class="container flex flex-wrap items-center justify-between mx-auto"
+      >
+        <a href="./index.html" class="flex items-center">
+          <img src="./images/logo.svg" class="h-6 mr-3 sm:h-9" />
+          >
+        </a>
+        <div class="flex md:order-2">
+          <button
+            type="button"
+            class="text-light bg-primary hover:bg-primary/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+          >
+            Register
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium md:border-0"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="block py-2 pl-3 pr-4 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                >General Rules</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                >Events</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                >Schedule</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div id="canvas">
       <div class="container-fluid main disable-selection">
         <div class="row">
@@ -47,8 +130,12 @@
           <div class="col-md-6">
             <div class="row">
               <div class="col">
-                <div>
-                  <img id="logo" src="./images/logo.svg" />
+                <div class="w-full text-center">
+                  <img
+                    class="mx-auto w-[100%] h-[100%] md:w-[75%] md:h-[75%]"
+                    id="logo"
+                    src="./images/logo.svg"
+                  />
                 </div>
               </div>
             </div>
@@ -159,7 +246,7 @@
           <div class="mt-2 grid grid-cols-2 gap-2 md:gap-4">
             <a
               href="./technical-events.html"
-              class="hover:-translate-y-1 transition bg-light/10 rounded-lg flex flex-col items-center justify-center md:max-w-sm px-2 sm:py-2 md:py-8"
+              class="hover:-translate-y-1 transition bg-light/10 rounded-lg flex flex-col items-center justify-center md:max-w-sm px-2 py-4 md:py-8"
             >
               <h2 class="text-light text-lg md:text-3xl font-semibold">
                 Technical Events
@@ -172,7 +259,7 @@
             </a>
             <a
               href="./non-technical-events.html"
-              class="hover:-translate-y-1 transition bg-light/10 rounded-lg flex flex-col items-center justify-center md:max-w-sm px-2 sm:py-2 md:py-8"
+              class="hover:-translate-y-1 transition bg-light/10 rounded-lg flex flex-col items-center justify-center md:max-w-sm px-2 py-4 md:py-8"
             >
               <h2 class="text-light text-lg md:text-3xl font-semibold">
                 Non-Technical Events
@@ -185,7 +272,7 @@
             </a>
             <a
               href="./events/futsal.html"
-              class="hover:-translate-y-1 transition col-span-2 bg-light/10 rounded-lg flex flex-col items-center justify-center px-2 sm:py-2 md:py-8"
+              class="hover:-translate-y-1 transition col-span-2 bg-light/10 rounded-lg flex flex-col items-center justify-center px-2 py-4 md:py-8"
             >
               <h2 class="text-light text-lg md:text-3xl font-semibold">
                 Futsal
@@ -396,7 +483,9 @@
             </div>
           </div>
           <p class="p-2"></p>
-          <button class="bg-accent text-lg font-medium rounded-lg px-4 py-2">
+          <button
+            class="bg-accent hover:bg-accent/90 text-lg font-medium rounded-lg px-4 py-2"
+          >
             Get Detailed Schedule
           </button>
         </div>
@@ -449,8 +538,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://threejs.org/examples/js/lights/RectAreaLightUniformsLib.js"></script>
+
     <script src="./src/script.js"></script>
-    <script src="./src/tiles.js"></script>
-    <script src="./src/events.js"></script>
+    <script src="./src/code.js"></script>
   </body>
 </html>

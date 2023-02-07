@@ -68,7 +68,7 @@ function init() {
   for (var i = 0; i < 30; i++) {
     var geometry = new THREE.IcosahedronGeometry(1);
     var material = new THREE.MeshStandardMaterial({
-      shading: THREE.FlatShading,
+      flatshading: THREE.FlatShading,
       color: 0x111111,
       transparent: false,
       opacity: 1,
@@ -145,7 +145,7 @@ rectLight.lookAt(0, 0, 0);
 scene.add(rectLight);
 
 rectLightHelper = new THREE.RectAreaLightHelper(rectLight);
-scene.add(rectLightHelper);
+// scene.add(rectLightHelper);
 
 //------------------------------------------------------------- RAYCASTER
 var raycaster = new THREE.Raycaster();
