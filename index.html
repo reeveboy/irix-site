@@ -3,11 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>IRIX 2023</title>
-    <link
-      rel="shortcut icon"
-      href="./images/IRIXlogo.svg"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +19,25 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/global.css" />
     <link rel="stylesheet" href="./styles/tiles.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: "#120d28",
+              light: "#E9E6F7",
+              primary: "#113485",
+              primaryHover: "#0f2a6b",
+              accent: "#ff6524",
+              lightDark: "#1A162E",
+              g2: "#CF7915",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body>
     <div id="canvas">
@@ -33,9 +48,7 @@
             <div class="row">
               <div class="col">
                 <div class="content">
-                  <img id="logo" src="./images/IRIXlogo.svg" />
-
-                  <!-- <h2 class="subtitle gradient-animation">Coming Soon!</h2> -->
+                  <img id="logo" src="./images/logo.svg" />
                 </div>
               </div>
             </div>
@@ -45,144 +58,154 @@
       </div>
     </div>
 
-    <div id="next">
-      <div id="tiles"></div>
-      <section>
-        <h1 class="title">Technical Events</h1>
-        <div id="technical-events" class="card-group">
-          <div class="card">
-            <div class="card-img" style="background-color: #fff3ca">
-              <img src="./images/icons/c-pecialist.png" alt="" />
-            </div>
-            <div class="card-content">
-              <h2 class="card-title">C’pecialist</h2>
-              <span class="card-description"
-                >C’pecialist is the ultimate battle to show off one's
-                programming skills ; You and your companion shall go through fun
-                and exciting challenges testing your logic, debugging and C++
-                programming skills ; So what are you waiting for? Do you have
-                what it takes?</span
-              >
-              <div>
-                <button class="card-btn">View Details</button>
-              </div>
-            </div>
-          </div>
+    <div id="next" class="text-light p-4">
+      <!-- <div id="tiles"></div> -->
+      <div class="w-[90%] mx-auto">
+        <div class="max-w-lg mx-auto text-center">
+          <h1 class="text-accent text-3xl font-bold uppercase">IRIX 2023</h1>
+          <p class="text-sm">
+            Get ready for a thrilling experience as the Department of Computer
+            Science presents the highly anticipated Inter Collegiate Tech Event,
+            back after a 2-year hiatus due to the pandemic. Join us for a day
+            filled with excitement, laughter and thought-provoking activities.
+            Unleash your tech skills and show off your knowledge as you compete
+            with students from other colleges. With plenty of fun and learning
+            opportunities, this event promises to be a memorable one. Mark your
+            calendars and gear up for an unforgettable experience!
+          </p>
+        </div>
 
-          <div class="card">
-            <div class="card-img" style="background-color: #83dbff">
-              <img src="./images/icons/webathon.png" alt="" />
-            </div>
-            <div class="card-content">
-              <h2 class="card-title">Webathon</h2>
-              <span class="card-description"
-                >lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                auctor, nisl eget ultricies lacinia, nunc nisl tincidunt nisl,
-                eget aliquam nisl nisl sit amet lorem.</span
-              >
-              <button class="card-btn">View Details</button>
-            </div>
-          </div>
+        <p class="p-4"></p>
 
-          <div class="card">
-            <div class="card-img" style="background-color: #fbb34b">
-              <img src="./images/icons/css-battle.png" alt="" />
+        <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-accent text-3xl font-bold uppercase">
+            General Rules
+          </h1>
+          <div class="flex flex-col text-left text-dark">
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>The event is open to all enrolled college students.</p>
             </div>
-            <div class="card-content">
-              <h2 class="card-title">CSS Battle</h2>
-              <span class="card-description"
-                >lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                auctor, nisl eget ultricies lacinia, nunc nisl tincidunt nisl,
-                eget aliquam nisl nisl sit amet lorem. Donec auctor, nisl eget
-                ultricies lacinia, nunc nisl tincidunt nisl, eget aliquam nisl
-                nisl sit amet lorem.</span
-              >
-              <button class="card-btn">View Details</button>
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>Teams should consist of a maximum of X number of members.</p>
             </div>
-          </div>
-
-          <div class="card">
-            <div class="card-img" style="background-color: #ea5454">
-              <img src="./images/icons/treasure-hunt.png" alt="" />
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>
+                Teams must arrive on time and check in at the designated area
+                before the start of the event.
+              </p>
             </div>
-            <div class="card-content">
-              <h2 class="card-title">Treasure Hunt & Cipher</h2>
-              <span class="card-description"
-                >Participants will have to compete in a series of tasks ,whereby
-                they will be presented with clues,ciphers and mysteries in order
-                to solve the case of the missing piece.</span
-              >
-              <button class="card-btn">View Details</button>
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>
+                All participants must adhere to the principles of fair play and
+                sportsmanship. Any form of cheating or disruptive behavior will
+                not be tolerated.
+              </p>
             </div>
-          </div>
-
-          <div class="card">
-            <div class="card-img" style="background-color: #c0c9ff">
-              <img src="./images/icons/money-drop.png" alt="" />
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>
+                Participants must follow all safety guidelines and instructions
+                provided by the event organizers.
+              </p>
             </div>
-            <div class="card-content">
-              <h2 class="card-title">Money Drop</h2>
-              <span class="card-description"
-                >Assuming 20 colleges participate, they will be divided into 4
-                groups of 5, which will go into a speed round, where correct
-                answers and speed of submission count, and the top 2 teams from
-                each group will be selected.</span
-              >
-              <button class="card-btn">View Details</button>
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>
+                Teams must report at the designated time and location specified
+                in the event schedule.
+              </p>
             </div>
-          </div>
-
-          <div class="card">
-            <div class="card-img" style="background-color: #5d89fb">
-              <img src="./images/icons/debate.png" alt="" />
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>
+                Teams that arrive late may be penalized or disqualified, at the
+                discretion of the event organizers.
+              </p>
             </div>
-            <div class="card-content">
-              <h2 class="card-title">Debate</h2>
-              <span class="card-description"
-                >Once a google form is created and data is gathered WhatsApp
-                group will be created for participants and for the first-round
-                topic will be given one day upfront. Speakers should be ready
-                for both sides' pros and cons, once they come to college each
-                speaker will be given a piece of paper where their side will be
-                allotted whether they are talking for or against.</span
-              >
-              <button class="card-btn">View Details</button>
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>
+                Teams must pay a registration fee of X amount to participate in
+                the event.
+              </p>
             </div>
-          </div>
-
-          <div class="card">
-            <div class="card-img" style="background-color: #54edda">
-              <img src="./images/icons/pc-building.png" alt="" />
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>
+                By participating in the event, participants agree to hold
+                harmless the event organizers and their affiliates from any and
+                all claims, losses, damages, or injuries.
+              </p>
             </div>
-            <div class="card-content">
-              <h2 class="card-title">PC Building</h2>
-              <span class="card-description"
-                >In this competition, each participation will have to write the
-                specs to build the best PC possible within the specified
-                budget.</span
-              >
-              <button class="card-btn">View Details</button>
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>
+                The event organizers reserve the right to make changes to these
+                rules at any time, as deemed necessary.
+              </p>
             </div>
-          </div>
-
-          <div class="card">
-            <div class="card-img" style="background-color: #ec3e87">
-              <img src="./images/icons/logo-making.png" alt="" />
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>All teams should have a Bonafied letter</p>
             </div>
-            <div class="card-content">
-              <h2 class="card-title">Logo Making</h2>
-              <span class="card-description"
-                >lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                auctor, nisl eget ultricies lacinia, nunc nisl tincidunt nisl,
-                eget aliquam nisl nisl sit amet lorem. Donec auctor, nisl eget
-                ultricies lacinia, nunc nisl tincidunt nisl, eget aliquam nisl
-                nisl sit amet lorem.</span
-              >
-              <button class="card-btn">View Details</button>
+            <div class="bg-light rounded-md p-2 mt-2">
+              <p>All participants should compulsory carry ID cards</p>
             </div>
           </div>
         </div>
-      </section>
+
+        <p class="p-4"></p>
+
+        <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-accent text-3xl font-bold uppercase">Events</h1>
+          <div class="mt-2 grid grid-cols-2 gap-6">
+            <div
+              class="bg-light rounded-lg flex flex-col items-center max-w-sm px-2 py-8"
+            >
+              <h2 class="text-dark text-3xl font-semibold">Technical Events</h2>
+              <img src="./images/icons/mind.png" height="100px" width="100px" />
+            </div>
+            <div
+              class="bg-light rounded-lg flex flex-col items-center max-w-sm px-2 py-8"
+            >
+              <h2 class="text-dark text-3xl font-semibold">
+                Non-Technical Events
+              </h2>
+              <img
+                src="./images/icons/brain.png"
+                height="100px"
+                width="100px"
+              />
+            </div>
+          </div>
+          <div class="mt-4 grid grid-cols-1">
+            <div
+              class="bg-light rounded-lg flex flex-col items-center px-2 py-8"
+            >
+              <h2 class="text-dark text-3xl font-semibold">Futsal</h2>
+              <img
+                src="./images/icons/football.png"
+                height="100px"
+                width="100px"
+              />
+            </div>
+          </div>
+        </div>
+
+        <p class="p-4"></p>
+
+        <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-accent text-3xl font-bold uppercase">Schedule</h1>
+          <div class="mt-2 grid grid-cols-2 gap-4">
+            <div class="flex flex-col items-center">
+              <h1
+                class="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-accent to-g2"
+              >
+                Day 1
+              </h1>
+              <div class="flex flex-col">
+                <p>9:00am - 9:30am</p>
+                <div class="bg-lightDark border-1 border-[#363636]">
+                  <div>Registration</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
