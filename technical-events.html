@@ -2,146 +2,409 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>IRIX 2023</title>
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=KoHo:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/global.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: "#120d28",
+              light: "#E9E6F7",
+              primary: "#113485",
+              primaryHover: "#0f2a6b",
+              accent: "#ff6524",
+              lightDark: "#1A162E",
+              g2: "#CF7915",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body>
-    <section>
-      <h1 class="title">Technical Events</h1>
-      <div id="technical-events" class="card-group">
-        <div class="card">
-          <div class="card-img" style="background-color: #fff3ca">
-            <img src="./images/icons/c-pecialist.png" alt="" />
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">C’pecialist</h2>
-            <span class="card-description"
-              >C’pecialist is the ultimate battle to show off one's programming
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="transition-all duration-300 z-20 px-2 bg-dark sm:px-4 py-2.5 w-full top-0 left-0 border-b border-gray-700"
+    >
+      <div
+        class="container flex flex-wrap items-center justify-between mx-auto"
+      >
+        <a href="./index.html" class="flex items-center">
+          <img src="./images/logo.svg" class="h-6 mr-3 sm:h-9" />
+          >
+        </a>
+        <div class="flex md:order-2">
+          <button
+            type="button"
+            class="text-light bg-primary hover:bg-primary/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+          >
+            Register
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium md:border-0"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="block py-2 pl-3 pr-4 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                >General Rules</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                >Events</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 md:p-0 md:hover:text-white text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700"
+                >Schedule</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="w-[90%] mx-auto p-4 text-light">
+      <div class="text-center max-w-4xl mx-auto">
+        <h1 class="text-accent text-3xl md:text-5xl font-bold uppercase">
+          Technical Events
+        </h1>
+        <p class="p-4"></p>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-16 p-4 md:p-0">
+          <div
+            class="relative flex flex-col items-center text-dark bg-[#FFF3CA] rounded-lg p-4"
+          >
+            <div
+              class="absolute -top-10 -right-10 bg-inherit rounded-full border border-gray-700 p-4"
+            >
+              <img src="./images/icons/c-pecialist.png" class="w-14 h-14" />
+            </div>
+
+            <p class="text-3xl font-bold">C’pecialist</p>
+            <p class="p-1"></p>
+            <p class="flex-grow">
+              C’pecialist is the ultimate battle to show off one's programming
               skills ; You and your companion shall go through fun and exciting
               challenges testing your logic, debugging and C++ programming
-              skills ; So what are you waiting for? Do you have what it
-              takes?</span
+              skills ; So what are you waiting for? Do you have what it takes?
+            </p>
+            <p class="p-1"></p>
+            <a
+              href="./events/c-pecialist.html"
+              class="bg-primary text-light hover:bg-primary/90 text-lg font-medium rounded-lg px-4 py-2"
             >
-            <div>
-              <button class="card-btn">View Details</button>
+              View Details
+            </a>
+          </div>
+
+          <div
+            class="relative flex flex-col items-center text-dark bg-[#6AD1BF] rounded-lg p-4"
+          >
+            <div
+              class="absolute -top-10 -right-10 bg-inherit rounded-full border border-gray-700 p-4"
+            >
+              <img src="./images/icons/webathon.png" class="w-14 h-14" />
             </div>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="card-img" style="background-color: #83dbff">
-            <img src="./images/icons/webathon.png" alt="" />
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">Webathon</h2>
-            <span class="card-description"
-              >lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              auctor, nisl eget ultricies lacinia, nunc nisl tincidunt nisl,
-              eget aliquam nisl nisl sit amet lorem.</span
+            <p class="text-3xl font-bold">Web-a-thon</p>
+            <p class="p-1"></p>
+            <p class="flex-grow">
+              C’pecialist is the ultimate battle to show off one's programming
+              skills ; You and your companion shall go through fun and exciting
+              challenges testing your logic, debugging and C++ programming
+              skills ; So what are you waiting for? Do you have what it takes?
+            </p>
+            <p class="p-1"></p>
+            <a
+              href="./events/webathon.html"
+              class="bg-primary text-light hover:bg-primary/90 text-lg font-medium rounded-lg px-4 py-2"
             >
-            <button class="card-btn">View Details</button>
+              View Details
+            </a>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="card-img" style="background-color: #fbb34b">
-            <img src="./images/icons/css-battle.png" alt="" />
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">CSS Battle</h2>
-            <span class="card-description"
-              >lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              auctor, nisl eget ultricies lacinia, nunc nisl tincidunt nisl,
-              eget aliquam nisl nisl sit amet lorem. Donec auctor, nisl eget
-              ultricies lacinia, nunc nisl tincidunt nisl, eget aliquam nisl
-              nisl sit amet lorem.</span
+          <div
+            class="relative flex flex-col items-center text-dark bg-[#FBB34B] rounded-lg p-4"
+          >
+            <div
+              class="absolute -top-10 -right-10 bg-inherit rounded-full border border-gray-700 p-4"
             >
-            <button class="card-btn">View Details</button>
-          </div>
-        </div>
+              <img src="./images/icons/css-battle.png" class="w-14 h-14" />
+            </div>
 
-        <div class="card">
-          <div class="card-img" style="background-color: #ea5454">
-            <img src="./images/icons/treasure-hunt.png" alt="" />
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">Treasure Hunt & Cipher</h2>
-            <span class="card-description"
-              >Participants will have to compete in a series of tasks ,whereby
-              they will be presented with clues,ciphers and mysteries in order
-              to solve the case of the missing piece.</span
+            <p class="text-3xl font-bold">CSS Battle</p>
+            <p class="p-1"></p>
+            <p class="flex-grow">
+              CSS Battle is a thrilling competition that tests participants' CSS
+              skills to the max. It's an opportunity for CSS enthusiasts to
+              showcase their abilities, push their limits, and challenge
+              themselves against others in the field. Whether you're a seasoned
+              pro or just starting out, CSS Battle is the perfect way to put
+              your skills to the test and prove your expertise in CSS.
+            </p>
+            <p class="p-1"></p>
+            <a
+              href="./events/css-battle.html"
+              class="bg-primary text-light hover:bg-primary/90 text-lg font-medium rounded-lg px-4 py-2"
             >
-            <button class="card-btn">View Details</button>
+              View Details
+            </a>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="card-img" style="background-color: #c0c9ff">
-            <img src="./images/icons/money-drop.png" alt="" />
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">Money Drop</h2>
-            <span class="card-description"
-              >Assuming 20 colleges participate, they will be divided into 4
-              groups of 5, which will go into a speed round, where correct
-              answers and speed of submission count, and the top 2 teams from
-              each group will be selected.</span
+          <div
+            class="relative flex flex-col items-center text-dark bg-[#EA5454] rounded-lg p-4"
+          >
+            <div
+              class="absolute -top-10 -right-10 bg-inherit rounded-full border border-gray-700 p-4"
             >
-            <button class="card-btn">View Details</button>
-          </div>
-        </div>
+              <img src="./images/icons/treasure-hunt.png" class="w-14 h-14" />
+            </div>
 
-        <div class="card">
-          <div class="card-img" style="background-color: #5d89fb">
-            <img src="./images/icons/debate.png" alt="" />
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">Debate</h2>
-            <span class="card-description"
-              >Once a google form is created and data is gathered WhatsApp group
-              will be created for participants and for the first-round topic
-              will be given one day upfront. Speakers should be ready for both
-              sides' pros and cons, once they come to college each speaker will
-              be given a piece of paper where their side will be allotted
-              whether they are talking for or against.</span
+            <p class="text-3xl font-bold">Treasure Hunt</p>
+            <p class="p-1"></p>
+            <p class="flex-grow">
+              Participants will have to compete in a series of tasks, whereby
+              they will be presented with clues, ciphers and mysteries in order
+              to solve the case of the missing piece. So, sharpen your wits and
+              put your problem-solving skills to the test in this one-of-a-kind
+              event!"
+            </p>
+            <p class="p-1"></p>
+            <a
+              href="./events/treasure-hunt.html"
+              class="bg-primary text-light hover:bg-primary/90 text-lg font-medium rounded-lg px-4 py-2"
             >
-            <button class="card-btn">View Details</button>
+              View Details
+            </a>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="card-img" style="background-color: #54edda">
-            <img src="./images/icons/pc-building.png" alt="" />
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">PC Building</h2>
-            <span class="card-description"
-              >In this competition, each participation will have to write the
-              specs to build the best PC possible within the specified
-              budget.</span
+          <div
+            class="relative flex flex-col items-center text-dark bg-[#C0C9FF] rounded-lg p-4"
+          >
+            <div
+              class="absolute -top-10 -right-10 bg-inherit rounded-full border border-gray-700 p-4"
             >
-            <button class="card-btn">View Details</button>
-          </div>
-        </div>
+              <img src="./images/icons/money-drop.png" class="w-14 h-14" />
+            </div>
 
-        <div class="card">
-          <div class="card-img" style="background-color: #ec3e87">
-            <img src="./images/icons/logo-making.png" alt="" />
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">Logo Making</h2>
-            <span class="card-description"
-              >lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              auctor, nisl eget ultricies lacinia, nunc nisl tincidunt nisl,
-              eget aliquam nisl nisl sit amet lorem. Donec auctor, nisl eget
-              ultricies lacinia, nunc nisl tincidunt nisl, eget aliquam nisl
-              nisl sit amet lorem.</span
+            <p class="text-3xl font-bold">Money Drop</p>
+            <p class="p-1"></p>
+            <p class="flex-grow">
+              Get ready for a thrilling quiz competition with other colleges
+              battling it out for glory! Try your luck and escape the dread
+              fall! It's going to be a wild ride, so buckle up and get ready to
+              play!
+            </p>
+            <p class="p-1"></p>
+            <a
+              href="./events/money-drop.html"
+              class="bg-primary text-light hover:bg-primary/90 text-lg font-medium rounded-lg px-4 py-2"
             >
-            <button class="card-btn">View Details</button>
+              View Details
+            </a>
+          </div>
+
+          <div
+            class="relative flex flex-col items-center text-dark bg-[#5D89FB] rounded-lg p-4"
+          >
+            <div
+              class="absolute -top-10 -right-10 bg-inherit rounded-full border border-gray-700 p-4"
+            >
+              <img src="./images/icons/debate.png" class="w-14 h-14" />
+            </div>
+
+            <p class="text-3xl font-bold">Debate</p>
+            <p class="p-1"></p>
+            <p class="flex-grow">
+              The biggest war of words is around the town. So get all set for
+              the fight and give your best to prove your points and grab some
+              too!
+            </p>
+            <p class="p-1"></p>
+            <a
+              href="./events/debate.html"
+              class="bg-primary text-light hover:bg-primary/90 text-lg font-medium rounded-lg px-4 py-2"
+            >
+              View Details
+            </a>
+          </div>
+
+          <div
+            class="relative flex flex-col items-center text-dark bg-[#54EDDA] rounded-lg p-4"
+          >
+            <div
+              class="absolute -top-10 -right-10 bg-inherit rounded-full border border-gray-700 p-4"
+            >
+              <img src="./images/icons/pc-building.png" class="w-14 h-14" />
+            </div>
+
+            <p class="text-3xl font-bold">PC Building</p>
+            <p class="p-1"></p>
+            <p class="flex-grow">
+              The Ultimate Showdown of Tech Titans! Get ready to flex your tech
+              muscles and show off your PC building prowess as you compete to
+              craft the ultimate computer within a set budget. It's time to put
+              your knowledge to the test and see if you've got what it takes to
+              come out on top and reign supreme as the PC Building Champion!
+            </p>
+            <p class="p-1"></p>
+            <a
+              href="./events/pc-building.html"
+              class="bg-primary text-light hover:bg-primary/90 text-lg font-medium rounded-lg px-4 py-2"
+            >
+              View Details
+            </a>
+          </div>
+
+          <div
+            class="relative flex flex-col items-center text-dark bg-[#EC3E87] rounded-lg p-4"
+          >
+            <div
+              class="absolute -top-10 -right-10 bg-inherit rounded-full border border-gray-700 p-4"
+            >
+              <img src="./images/icons/logo-making.png" class="w-14 h-14" />
+            </div>
+
+            <p class="text-3xl font-bold">Logo Making</p>
+            <p class="p-1"></p>
+            <p class="flex-grow">
+              Participants, time to put your creativity level to task at some
+              great extent and showcase your creation skills as the figure
+              awaits to get complete. therefore be up for it with your spirits
+              high.
+            </p>
+            <p class="p-1"></p>
+            <a
+              href="./events/logo-making.html"
+              class="bg-primary text-light hover:bg-primary/90 text-lg font-medium rounded-lg px-4 py-2"
+            >
+              View Details
+            </a>
+          </div>
+
+          <div
+            class="relative flex flex-col items-center text-dark bg-[#8987ED] rounded-lg p-4"
+          >
+            <div
+              class="absolute -top-10 -right-10 bg-inherit rounded-full border border-gray-700 p-4"
+            >
+              <img src="./images/icons/sql.png" class="w-14 h-14" />
+            </div>
+
+            <p class="text-3xl font-bold">SQL</p>
+            <p class="p-1"></p>
+            <p class="flex-grow">
+              C’pecialist is the ultimate battle to show off one's programming
+              skills ; You and your companion shall go through fun and exciting
+              challenges testing your logic, debugging and C++ programming
+              skills ; So what are you waiting for? Do you have what it takes?
+            </p>
+            <p class="p-1"></p>
+            <a
+              href="./events/sql.html"
+              class="bg-primary text-light hover:bg-primary/90 text-lg font-medium rounded-lg px-4 py-2"
+            >
+              View Details
+            </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- Footer -->
+    <div class="flex flex-col text-light">
+      <div class="bg-[#0C081B] grid grid-cols-1 p-4 place-items-center">
+        <div class="flex flex-col items-center">
+          <img src="./images/logo.svg" width="100%" height="100%" />
+          <p class="text-sm">Department of Computer Science</p>
+          <p class="p-1"></p>
+          <div class="flex">
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+              <svg
+                class="h-[30px] w-[30px] fill-light"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                />
+              </svg>
+            </a>
+            <p class="p-1"></p>
+            <a href="http://" target="_blank" rel="noopener noreferrer">
+              <svg
+                class="h-[30px] w-[30px] fill-light"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+              >
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-[#07050D] text-center text-xs p-2 text-gray-400">
+        Copyright © 2023-2024 Parvatibai Chowgule College of Arts and Science -
+        All rights reserved.
+      </div>
+    </div>
   </body>
 </html>
