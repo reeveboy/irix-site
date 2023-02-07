@@ -68,7 +68,7 @@ function init() {
   for (var i = 0; i < 30; i++) {
     var geometry = new THREE.IcosahedronGeometry(1);
     var material = new THREE.MeshStandardMaterial({
-      shading: THREE.FlatShading,
+      flatshading: THREE.FlatShading,
       color: 0x111111,
       transparent: false,
       opacity: 1,
@@ -116,7 +116,7 @@ function cameraSet() {
 
 //------------------------------------------------------------- SCENE
 var ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
-//scene.add(ambientLight);
+scene.add(ambientLight);
 
 var light = new THREE.SpotLight(0xffffff, 3);
 light.position.set(5, 5, 2);
@@ -171,7 +171,7 @@ function onMouseDown(event) {
 
       INTERSECTED = intersected[0].object;
       INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
-      INTERSECTED.material.emissive.setHex(0xffff00);
+      INTERSECTED.material.emissive.setHex(0x3e7ee9);
       //INTERSECTED.material.map = null;
       //lightBack.position.set(INTERSECTED.position.x,INTERSECTED.position.y,INTERSECTED.position.z);
 
@@ -190,9 +190,11 @@ function onMouseDown(event) {
 }
 function onMouseUp(event) {}
 
-window.addEventListener("mousedown", onMouseDown, false);
-window.addEventListener("mouseup", onMouseUp, false);
-window.addEventListener("mousemove", onMouseMove, false);
+const canvas = document.getElementsByTagName("canvas")[0];
+
+canvas.addEventListener("mousedown", onMouseDown, false);
+canvas.addEventListener("mouseup", onMouseUp, false);
+canvas.addEventListener("mousemove", onMouseMove, false);
 
 //------------------------------------------------------------- RENDER
 var uSpeed = 0.1;
