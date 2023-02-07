@@ -8,6 +8,7 @@
 - Debate
 - PC Building
 - Logo Making
+- SQL
 
 # Non Technical Events
 

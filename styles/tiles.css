@@ -13,13 +13,6 @@
   }
 }
 
-#next {
-  display: flex;
-  flex-direction: column;
-
-  position: relative;
-}
-
 #tiles {
   animation: background-pan 10s linear infinite;
   background: linear-gradient(to right, var(--g1), var(--g2), var(--g1));

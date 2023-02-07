@@ -145,7 +145,7 @@ rectLight.lookAt(0, 0, 0);
 scene.add(rectLight);
 
 rectLightHelper = new THREE.RectAreaLightHelper(rectLight);
-// scene.add(rectLightHelper);
+scene.add(rectLightHelper);
 
 //------------------------------------------------------------- RAYCASTER
 var raycaster = new THREE.Raycaster();
