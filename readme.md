@@ -13,11 +13,10 @@
 # Non Technical Events
 
 - Fashion Show
+- Fastest Typing
 - Photography
-- Logo Making
 - Meme
 - Graffiti Painting
 - Futsal
-- Fastest Typing
 
 # Gaming
