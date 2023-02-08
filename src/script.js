@@ -233,5 +233,10 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-animate();
+let loading = true;
+
+// if (loading) document.getElementById("loading").classList.add("inline");
+if (!loading) document.getElementById("loading").classList.add("hidden");
+
 init();
+animate();
