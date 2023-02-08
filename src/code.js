@@ -13,3 +13,27 @@ function scrollFunction() {
     document.getElementById("navbar").style.top = "-80px";
   }
 }
+
+function gototop() {
+  document
+    .getElementById("canvas")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function gotorules() {
+  document
+    .getElementById("general-rules")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function gotoevents() {
+  document
+    .getElementById("events")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function gotoschedule() {
+  document
+    .getElementById("schedule")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
+}
