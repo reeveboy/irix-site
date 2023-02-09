@@ -368,7 +368,7 @@ if (isset($_POST['submit'])) {
           <p class="p-1"></p>
           <div class="flex">
             <a
-              href="https://www.instagram.com/dcs.irix/"
+              href="https://www.instagram.com/irix_dcs/"
               target="_blank"
               rel="noopener noreferrer"
             >
