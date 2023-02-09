@@ -219,6 +219,58 @@
             />
           </div>
 
+          <div class="mb-6 text-left">
+            <label class="block mb-2 text-lg font-medium"
+              >Team Participating for: (check event)</label
+            >
+            <div class="flex items-center mb-4">
+              <input
+                id="futsal"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+              />
+              <label
+                data-tooltip-target="futsal-tooltip"
+                data-tooltip-style="light"
+                for="futsal"
+                class="ml-2 text-lg font-medium text-gray-900 dark:text-gray-300"
+                >Futsal</label
+              >
+              <div
+                id="futsal-tooltip"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+              >
+                Separate registration fee of &#x20B9;500.
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <input
+                id="gaming"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+              />
+              <label
+                data-tooltip-target="gaming-tooltip"
+                data-tooltip-style="light"
+                for="gaming"
+                class="ml-2 text-lg font-medium text-gray-900 dark:text-gray-300"
+                >Gaming</label
+              >
+              <div
+                id="gaming-tooltip"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+              >
+                Separate registration fee are applied.
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+
           <button
             type="submit"
             class="shadow-md shadow-primary/50 mt-4 w-full text-light bg-primary hover:bg-primary/90 font-medium rounded-lg text-lg px-5 py-2.5 text-center md:mr-0"
