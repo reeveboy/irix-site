@@ -1,3 +1,64 @@
+<?php
+// $alert_flag = "none";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "irix";
+
+$alert_flag = "none";
+$servername = "localhost";
+$username = "idzzdcmy_irix";
+$password = "admin@irix";
+$dbname = "idzzdcmy_irix";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}else{
+  //  echo "<h2 style='color : white'>db connected</h2>";
+  //  echo '<script>alert("db connected")</script>';
+
+}
+
+if (isset($_POST['submit'])) {
+    //  echo $_POST["collage"].'<br>';
+    //  echo $_POST["team_leader"].'<br>';
+    //  echo $_POST["team_leader_contact"].'<br>';
+    //  echo $_POST["email"].'<br>';
+    $futsal = $_POST["futsal"] ? $_POST["futsal"] : "0" ;
+    $gaming = $_POST["futsal"] ? $_POST["gaming"] : "0" ;
+
+    $sql = "INSERT INTO registration (collage_name, team_leader_name, team_leader_contact,email,futsal,gaming)
+    VALUES ('".$_POST["collage"]."', '".$_POST["team_leader"]."', '".$_POST["team_leader_contact"]."','".$_POST["email"]."','".$futsal."','".$gaming."')";
+
+    if ($conn->query($sql) === TRUE) {
+      $alert_flag = "block";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $to = $_POST["email"];
+    $subject = "Irix 2023 Registration";
+    
+    $message = "<b>Thank you for registering to irix 2023 click the link below to join the whatsapp group</b><br>";
+    $message .= "<b>https://chat.whatsapp.com/JtS0EUpGXi9JzwZk96rdab<b>";
+    
+    $header = "From:admin@i-rix.com \r\n";
+    // $header .= "Cc:afgh@somedomain.com \r\n";
+    $header .= "MIME-Version: 1.0\r\n";
+    $header .= "Content-type: text/html\r\n";
+    
+    $retval = mail ($to,$subject,$message,$header);
+    
+    if( $retval == true ) {
+        echo "Message sent successfully...";
+    }else {
+       // echo "Message could not be sent...";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -126,6 +187,15 @@
 
     <div class="w-[90%] mx-auto p-4 text-light flex-grow">
       <div id="general-rules" class="text-center max-w-3xl mx-auto">
+
+      <!-- alert for success form submition -->
+        <div id="alert_message" style="display: <?= $alert_flag ?>" class="flex justify-center items-center m-1 font-medium py-1 px-2 bg-white rounded-md text-green-100 bg-green-700 border border-green-700 ">
+            <div class="text-xl font-normal  max-w-full flex-initial">
+                <div class="py-2">Registration Successful
+                    <div class="text-sm font-base">A link will be sent to your registered email to join the whatsapp group <a href="/#">here</a></div>
+                </div>
+            </div>
+        </div>
         <h1 class="text-accent text-3xl md:text-5xl font-bold uppercase">
           Registration
         </h1>
@@ -168,7 +238,8 @@
           </ul>
         </div>
         <p class="p-4"></p>
-        <form class="max-w-lg mx-auto mt-4 p-2">
+        <form action = "register.php" method = "post" class="max-w-lg mx-auto mt-4 p-2">
+
           <h1 class="text-accent text-2xl md:text-3xl font-bold uppercase">
             Register
           </h1>
@@ -177,6 +248,7 @@
             <label class="block mb-2 text-lg font-medium">College Name</label>
             <input
               id="college-name"
+              name="collage"
               class="shadow-md shadow-accent/50 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="College Name"
               required
@@ -189,6 +261,7 @@
             >
             <input
               id="team-leader"
+              name="team_leader"
               class="shadow-md shadow-accent/50 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="Team Leader Name"
               required
@@ -201,6 +274,7 @@
             >
             <input
               id="email"
+              name="email"
               class="shadow-md shadow-accent/50 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="Team Leader Email"
               required
@@ -213,6 +287,7 @@
             >
             <input
               id="contact-number"
+              name="team_leader_contact"
               class="shadow-md shadow-accent/50 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               placeholder="Team Leader Contact Number"
               required
@@ -227,8 +302,9 @@
               <input
                 id="futsal"
                 type="checkbox"
-                value=""
+                value="1"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                name="futsal"
               />
               <label
                 data-tooltip-target="futsal-tooltip"
@@ -250,8 +326,9 @@
               <input
                 id="gaming"
                 type="checkbox"
-                value=""
+                value="1"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                name="gaming"
               />
               <label
                 data-tooltip-target="gaming-tooltip"
@@ -271,12 +348,10 @@
             </div>
           </div>
 
-          <button
-            type="submit"
+          <input type = "submit" name = "submit" 
+            value = "Submit"
             class="shadow-md shadow-primary/50 mt-4 w-full text-light bg-primary hover:bg-primary/90 font-medium rounded-lg text-lg px-5 py-2.5 text-center md:mr-0"
           >
-            Submit
-          </button>
         </form>
       </div>
     </div>
