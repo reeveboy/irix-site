@@ -2,9 +2,9 @@
 $data ;
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "irix";
+$username = "idzzdcmy_irix";
+$password = "admin@irix";
+$dbname = "idzzdcmy_irix";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -1,15 +1,15 @@
 <?php
-$alert_flag = "none";
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "irix";
-
 // $alert_flag = "none";
 // $servername = "localhost";
-// $username = "idzzdcmy_irix";
-// $password = "admin@irix";
-// $dbname = "idzzdcmy_irix";
+// $username = "root";
+// $password = "";
+// $dbname = "irix";
+
+$alert_flag = "none";
+$servername = "localhost";
+$username = "idzzdcmy_irix";
+$password = "admin@irix";
+$dbname = "idzzdcmy_irix";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -115,7 +115,7 @@ if (isset($_POST['submit'])) {
         </a>
         <div class="flex md:order-2">
           <a
-            href="/register.html"
+            href="/register.php"
             type="button"
             class="text-light bg-primary hover:bg-primary/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
           >
