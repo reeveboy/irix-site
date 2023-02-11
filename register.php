@@ -310,7 +310,7 @@ if (isset($_POST['submit'])) {
                 data-tooltip-target="futsal-tooltip"
                 data-tooltip-style="light"
                 for="futsal"
-                class="ml-2 text-lg font-medium text-gray-900 dark:text-gray-300"
+                class="ml-2 text-lg font-medium text-light"
                 >Futsal</label
               >
               <div
@@ -334,7 +334,7 @@ if (isset($_POST['submit'])) {
                 data-tooltip-target="gaming-tooltip"
                 data-tooltip-style="light"
                 for="gaming"
-                class="ml-2 text-lg font-medium text-gray-900 dark:text-gray-300"
+                class="ml-2 text-lg font-medium text-light"
                 >Gaming</label
               >
               <div
