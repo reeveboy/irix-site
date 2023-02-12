@@ -115,7 +115,7 @@ if (isset($_POST['submit'])) {
         </a>
         <div class="flex md:order-2">
           <a
-            href="/register.php"
+            href="/register.html"
             type="button"
             class="text-light bg-primary hover:bg-primary/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
           >
@@ -238,7 +238,7 @@ if (isset($_POST['submit'])) {
           </ul>
         </div>
         <p class="p-4"></p>
-        <form action = "register.php" method = "post" class="max-w-lg mx-auto mt-4 p-2">
+        <form action = "register.html" method = "post" class="max-w-lg mx-auto mt-4 p-2">
 
           <h1 class="text-accent text-2xl md:text-3xl font-bold uppercase">
             Register
